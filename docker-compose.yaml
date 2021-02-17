@@ -3,15 +3,15 @@ version: "3"
 services:
   java:
     build: .
-    volumes: 
+    volumes:
       - usr/src/app
     container_name: java
-    image: java
+    image: openjdk
     networks:
       - codejs
 
   db:
-    image: mysql-8.algumacoisa
+    image: mysql-8.0.23
     build: ./.docker/mysql
     container_name: mysql
     command: --innodb-use-native-aio=0
@@ -25,21 +25,6 @@ services:
       - "3366:3306"
     depends_on:
       - java
-    networks:
-      - codejs
-
-  myAdmin:
-    image: phpmyadmin-alpine
-    environment:
-      - VARIAVEL_HOST_MYSQL=db
-      - VARIAVEL_USER_MYSQL=root
-    build: ./.docker/phpAdmin
-    ports:
-      - "80:80"
-    environment:
-      - PMA_ARBITRARY=1
-    depends_on:
-      - db
     networks:
       - codejs
 
