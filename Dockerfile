@@ -1,5 +1,6 @@
 FROM openjdk:17-jdk-alpine3.13
-RUN touch /home/node/.bashrc | echo "PS1='\w\$ '" >> /home/node/.bashrc
+RUN adduser -u 1000 -h /home/leandro -D leandro
+RUN touch /home/leandro/.bashrc | echo "PS1='\w\$ '" >> /home/leandro/.bashrc
 ENV DOCKERIZE_VERSION v0.6.1
 RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
     && tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
@@ -7,8 +8,7 @@ RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSI
 RUN apk add --no-cache npm nodejs \
     && apk add --no-cache bash 
 WORKDIR /usr/src/app
-RUN useradd -ms /bin/bash node
-USER node
 ENTRYPOINT ["tail", "-f", "/dev/null"]
+USER leandro
 
 EXPOSE 9000
