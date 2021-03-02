@@ -7,8 +7,7 @@ RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSI
     && rm dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
 RUN apk add --no-cache npm nodejs \
     && apk add --no-cache bash 
-WORKDIR /usr/src/app
-ENTRYPOINT ["tail", "-f", "/dev/null"]
+WORKDIR /home/leandro/app
 USER leandro
-
 EXPOSE 9000
+ENTRYPOINT ["tail", "-f", "/dev/null"]

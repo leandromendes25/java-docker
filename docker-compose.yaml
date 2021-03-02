@@ -4,7 +4,7 @@ services:
   java:
     build: .
     volumes:
-      - usr/src/app
+      - .:/home/leandro/app
     container_name: java
     image: openjdk
     networks:
