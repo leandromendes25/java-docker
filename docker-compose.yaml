@@ -6,12 +6,10 @@ services:
     volumes:
       - .:/home/leandro/app
     container_name: java
-    image: openjdk
-    networks:
-      - codejs
+    depends_on:
+      - db
 
   db:
-    image: mysql-8.0.23
     build: ./.docker/mysql
     container_name: mysql
     command: --innodb-use-native-aio=0
@@ -23,11 +21,4 @@ services:
       - MYSQL_USER=root
     ports:
       - "3366:3306"
-    depends_on:
-      - java
-    networks:
-      - codejs
 
-networks:
-  codejs:
-    driver: bridge

@@ -9,5 +9,5 @@ RUN apk add --no-cache npm nodejs \
     && apk add --no-cache bash 
 WORKDIR /home/leandro/app
 USER leandro
-EXPOSE 9000
-ENTRYPOINT ["tail", "-f", "/dev/null"]
+
+ENTRYPOINT /bin/sh -c "while sleep 1000; do :; done"
