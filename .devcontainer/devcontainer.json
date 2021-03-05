@@ -25,7 +25,28 @@
 	},
 
 	// Add the IDs of extensions you want installed when the container is created.
-	"extensions": []
+	"extensions": ["visualstudioexptteam.vscodeintellicode",
+		"vscjava.vscode-spring-initializr",
+		"vscjava.vscode-java-dependency",
+		"vscjava.vscode-maven",
+		"gabrielbb.vscode-lombok",
+		"redhat.java",
+		"vscjava.vscode-java-test",
+		"georgewfraser.vscode-javac",
+		"vscjava.vscode-java-pack",
+		"ms-azuretools.vscode-docker",
+		"vscjava.vscode-java-debug",
+		"shengchen.vscode-checkstyle",
+		"pivotal.vscode-spring-boot",
+		"pivotal.vscode-boot-dev-pack",
+		"vscjava.vscode-spring-boot-dashboard",
+		"redhat.vscode-commons",
+		"formulahendry.code-runner",
+		"sohibe.java-generate-setters-getters",
+		"esbenp.prettier-vscode",
+		"redhat.fabric8-analytics"
+
+	]
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],

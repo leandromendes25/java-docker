@@ -1,4 +1,4 @@
-FROM openjdk:17-jdk-alpine3.13
+FROM adoptopenjdk/openjdk11:alpine
 RUN adduser -u 1000 -h /home/leandro -D leandro
 RUN touch /home/leandro/.bashrc | echo "PS1='\w\$ '" >> /home/leandro/.bashrc
 ENV DOCKERIZE_VERSION v0.6.1
