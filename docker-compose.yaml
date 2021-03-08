@@ -16,7 +16,7 @@ services:
     restart: always
     tty: true
     environment:
-      - MYSQL_DATABASE=maluko-doido
+      - MYSQL_DATABASE=meu_banco
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_USER=root
     ports:
