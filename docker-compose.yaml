@@ -1,13 +1,13 @@
-version: "3"
+# version: "3"
 
-services:
-  java:
-    build: .
-    volumes:
-      - .:/home/leandro/app
-    container_name: java
-    depends_on:
-      - db
+# services:
+#   java:
+#     build: .
+#     volumes:
+#       - .:/home/leandro/app
+#     container_name: java
+#     depends_on:
+#       - db
 
   db:
     build: ./.docker/mysql
@@ -21,4 +21,3 @@ services:
       - MYSQL_USER=root
     ports:
       - "3366:3306"
-
