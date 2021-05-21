@@ -21,4 +21,4 @@ services:
       - MYSQL_USER=root
     ports:
       - "3366:3306"
-
+    #host_port:container_port
